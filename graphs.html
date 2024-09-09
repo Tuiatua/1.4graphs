@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myChart"></canvas>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"
+        integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg=="
+        crossOrigin="anonymous"
+        referrerpolicy="no-referrer">
+</script>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['1980', '1990', '2000', '2010', '2023'],
+            datasets: [{
+                label: 'Carbon Monoxide in the atmosphere by PPM (parts per million)',
+                data: [9.7, 6.3, 3.1, 2.3, 1.7],
+                backgroundColor: [
+                    'rgb(69,69,69)',
+                    'rgb(112,112,112)',
+                    'rgb(154,154,154)',
+                    'rgb(212,212,212)',
+                    'rgb(233,233,233)',
+                ],
+                borderColor: [
+                    'black',
+                    'black',
+                    'black',
+                    'black',
+                    'black'
+                ],
+                borderWidth: 5
+            }]
+        },
+        options:{
+            y:{
+                beginAtZero: true
+            },
+            indexAxis: 'x'
+        }
+    });
+</script>
+<br><br><br><br><br><br><br><br>
+<canvas id="myChart2"></canvas>
+<script>
+    var cty = document.getElementById('myChart2');
+    var myChart2 = new Chart(cty, {
+        type: 'line',
+        data: {
+            labels: [4.26, 5.93, 7.44, 9.39, 11.31, 14.90, 17.05, 19.48, 20.31, 22.75, 23.52, 25.50, 29.59, 33.31, 35.46, 35.01, 37.15],
+            datasets: [{
+                label: 'Carbon emissions in fossil fuels from 1945 - present, measured in the billions of tonnes (100kg)',
+                data: ['1945', '1950', '1955', '1960', '1965','1970','1975','1980','1985','1990','1995','2000','2005','2010','2015','2020', '2022'],
+                borderColor: 'black'
+            }]
+        },
+        options:{
+            y: {
+                beginAtZero: true
+            }
+        }
+    });
+</script>
+<br><br><br><br><br><br><br><br>
+<div style="width: 700px">
+    <canvas id="myChart3"></canvas>
+</div>
+<script>
+    var ctz = document.getElementById('myChart3');
+    var myChart3 = new Chart(ctz, {
+        type: 'doughnut',
+        data: {
+            labels: ['Electricity', 'Industry Processes', 'Land Management (land use)', 'Appliances (heating, cooling, etc.)',
+            'Transportation'],
+            datasets: [{
+                label: 'Sections that make up the total U.S. Carbon Emissions in 2022',
+                data: [30, 16, 7, 12, 35],
+                backgroundColor: [
+                    'rgb(40, 58, 184)',
+                    'rgb(141, 55, 158)',
+                    'rgb(241, 52, 132)',
+                    'rgb(255, 96, 93)',
+                    'rgb(254, 169, 89)'
+                ],
+                hoverOffset: 1
+            }]
+        },
+        options:{
+            plugins:{
+                title:{
+                    display: true,
+                    text: 'Sections that make up the total U.S. Carbon Emissions in 2022'
+                },
+                legend: {
+                    position:'top'
+                }
+            }
+        }
+    });
+</script>
+<br><br><br><br><br><br><br><br>
+<div style="width: 700px">
+    <canvas id="myChart4"></canvas>
+</div>
+<script>
+    var cta = document.getElementById('myChart4');
+    var myChart4 = new Chart(cta, {
+        type: 'doughnut',
+        data: {
+            labels: ['China', 'United States', 'India', 'Russia', 'Japan', 'All other country combined'],
+            datasets: [{
+                label: '',
+                data: [32.88, 12.60, 6.99, 4.96, 2.81, 39.76],
+                backgroundColor: [
+                    'rgb(213, 62, 79)',
+                    'rgb(252, 141, 89)',
+                    'rgb(254, 224, 139)',
+                    'rgb(230, 245, 152)',
+                    'rgb(153, 213, 148)',
+                    'rgb(50, 136, 189)'
+                ],
+                hoverOffset: 1
+            }]
+        },
+        options:{
+            plugins:{
+                title:{
+                    display: true,
+                    text: 'Top 5 countries contributing to carbon emissions Compared to the rest of the world, measured by percent'
+                },
+                legend: {
+                    position:'right'
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
